@@ -27,7 +27,7 @@ remain=[];
 slice=[];
 sz_loc=nextid+1;
 strt_loc=nextid+2;
-unique_sz=unique(data,(:,sz_loc));
+unique_sz=unique(data(:,sz_loc));
 for i=1:length(unique_sz)
 sz=unique_sz(i);
 end_loc=strt_loc+sz-1;
@@ -40,7 +40,8 @@ Time_data=padcat(Time_data,slice);
 elseif code==8
 Vel_data=padcat(Vel_data,slice);
 elseif code==5
-LZH_data=padcat(LZH_Data,slice);
+LZH_data=padcat(LZH_data,slice);
+end
 end
 
 endfunction
